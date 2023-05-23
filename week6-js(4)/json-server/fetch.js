@@ -1,6 +1,6 @@
 const signupForm = document.getElementById("signupForm");
 
-signupForm.addEventListener("submit", (event) => {
+signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const username = document.getElementById("username").value;
@@ -12,6 +12,27 @@ signupForm.addEventListener("submit", (event) => {
     email: email,
     password: password,
   };
+
+  // try {
+  //   const response = await fetch("http://localhost:3000/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(newSignupInfo),
+  //   });
+
+  //   if (!response.ok) {
+  //     throw new Error("회원가입 정보를 전송하는데 실패했습니다.");
+  //   }
+
+  //   const data = await response.json();
+  //   console.log("회원가입이 완료되었습니다.");
+
+  //   signupForm.reset();
+  // } catch (error) {
+  //   console.log(error);
+  // }
 
   fetch("http://localhost:3000/users", {
     method: "POST",
@@ -38,12 +59,14 @@ signupForm.addEventListener("submit", (event) => {
   signupForm.reset();
 });
 
+// 회원가입 정보 데이터 조회 후 웹 브라우저에 표시
 fetch("http://localhost:3000/users")
   .then((response) => {
+    console.log(response);
     if (!response.ok) {
       throw new Error("서버 응답이 실패했습니다.");
     }
-    return response.json();
+    return response.json(); // 응답 본문을 JSON 형식으로 파싱하여 JavaScript 객체로 반환
   })
   .then((data) => {
     // 가입된 회원가입 정보를 브라우저에 표시하는 코드 작성
