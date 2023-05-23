@@ -1,0 +1,45 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "HTML",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "content": "CSS",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "content": "JavaScript",
+      "completed": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Hyeon Jeong Jang",
+      "email": "jjanghj3624@likelion.org",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "username": "Du Hee Lee",
+      "email": "iamdoo2@likelion.org",
+      "password": "likelion"
+    },
+    {
+      "username": "guswjd",
+      "email": "jjanghj3624@gmail.com",
+      "password": "password",
+      "id": 3
+    },
+    {
+      "username": "장현정",
+      "email": "jjanghj3624@gmail.com",
+      "password": "password12",
+      "id": 4
+    }
+  ]
+}
